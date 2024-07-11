@@ -32,7 +32,7 @@ export const sendVerificationEmail = async ({
 }: SendEmailProps) => {
   try {
     const verificationEmail = fs.readFileSync(
-      "./src/lib/email/verification-email.html",
+      "../email/verification-email.html",
       {
         encoding: "utf-8",
       }
@@ -65,7 +65,7 @@ export const sendResetEmail = async ({
   token,
 }: SendEmailProps) => {
   try {
-    const resetEmail = fs.readFileSync("./src/lib/email/reset.html", {
+    const resetEmail = fs.readFileSync("./email", {
       encoding: "utf-8",
     });
 
