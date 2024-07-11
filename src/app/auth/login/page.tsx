@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 const LoginPage = () => {
   return (
     <Suspense fallback={<div>Loading...</div>}>
-      <LoginForm />;
+      <LoginForm />
     </Suspense>
   );
 };
