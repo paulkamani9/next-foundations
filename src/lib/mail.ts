@@ -31,9 +31,12 @@ export const sendVerificationEmail = async ({
   token,
 }: SendEmailProps) => {
   try {
-    const verificationEmail = fs.readFileSync("email/verification-email.html", {
-      encoding: "utf-8",
-    });
+    const verificationEmail = fs.readFileSync(
+      "./email/verification-email.html",
+      {
+        encoding: "utf-8",
+      }
+    );
 
     const html = verificationEmail
       .replace("{name}", name)
@@ -62,7 +65,7 @@ export const sendResetEmail = async ({
   token,
 }: SendEmailProps) => {
   try {
-    const resetEmail = fs.readFileSync("email/reset.html", {
+    const resetEmail = fs.readFileSync("./email/reset.html", {
       encoding: "utf-8",
     });
 
@@ -93,7 +96,7 @@ export const sendDeleteEmail = async ({
   token,
 }: SendEmailProps) => {
   try {
-    const deleteEmail = fs.readFileSync("email/delete-email.html", {
+    const deleteEmail = fs.readFileSync("./email/delete-email.html", {
       encoding: "utf-8",
     });
 
