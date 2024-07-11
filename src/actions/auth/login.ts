@@ -9,7 +9,8 @@ import { defaultLoginRedirect } from "@/routes";
 import { AuthError } from "next-auth";
 import { getUserByEmail } from "@/data/user";
 import { generateVerificationToken } from "@/lib/tokens";
-import { sendVerificationEmail } from "@/lib/mail";
+import { sendVerificationEmail } from "@/email/verification-email";
+
 
 // Function to handle user login
 export const login = async (values: z.infer<typeof LoginSchema>) => {

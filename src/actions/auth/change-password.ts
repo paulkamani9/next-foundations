@@ -2,7 +2,7 @@
 
 // Import necessary functions and modules
 import { getUserById } from "@/data/user";
-import { sendResetEmail } from "@/lib/mail";
+import { sendResetEmail } from "@/email/reset-email";
 import { generateResetToken } from "@/lib/tokens";
 import { currentUser } from "@/lib/user";
 

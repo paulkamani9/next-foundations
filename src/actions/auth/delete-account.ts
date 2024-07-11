@@ -2,10 +2,9 @@
 import { getUserByEmail, getUserById } from "@/data/user";
 import { getVerificationTokenByToken } from "@/data/verification-token";
 import { db } from "@/lib/db";
-import { sendDeleteEmail } from "@/lib/mail";
 import { generateVerificationToken } from "@/lib/tokens";
 import { currentUser } from "@/lib/user";
-import { logOut } from "./logout";
+import { sendDeleteEmail } from "@/email/delete-email";
 
 export const deleteUserAccount = async () => {
   const user = await currentUser();

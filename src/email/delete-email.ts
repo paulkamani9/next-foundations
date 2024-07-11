@@ -1,4 +1,21 @@
-<!DOCTYPE html>
+import { transporter } from "@/lib/mail";
+
+const BASE_URL = `${process.env.BASE_URL}`;
+
+// Function to send a delete account confirmation email
+export const sendDeleteEmail = async ({
+  subject,
+  email,
+  name,
+  companyName,
+  token,
+}: SendEmailProps) => {
+  try {
+    await transporter.sendMail({
+      from: process.env.USER,
+      to: email,
+      subject,
+      html: `<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -15,7 +32,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      height: 100%;
     "
   >
     <div
@@ -37,14 +54,14 @@
         Hello {name},
       </p>
       <p style="font-size: 16px; color: #555; margin-bottom: 20px">
-        You are about to delete your account with {companyName}. This action is
+        You are about to delete your account with ${companyName}. This action is
         irreversible. Please confirm your decision by clicking the button below.
       </p>
       <p style="font-size: 16px; color: #555; margin-bottom: 20px">
         Please ignore if you did not request this action.
       </p>
       <a
-        href="{url}/delete-account?token={token}"
+        href="${process.env.BASE_URL}/delete-account?token=${token}"
         style="text-decoration: none"
       >
         <button
@@ -66,3 +83,10 @@
     </div>
   </body>
 </html>
+`,
+    });
+  } catch (error) {
+    console.error("Error sending delete email:", error);
+    throw error; // Rethrow the error to handle it further up the call stack
+  }
+};
