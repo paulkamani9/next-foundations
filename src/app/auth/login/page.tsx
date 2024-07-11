@@ -1,6 +1,7 @@
 import { LoginForm } from "@/components/auth/login-form";
 import { Metadata } from "next";
 import { Suspense } from "react";
+import { SyncLoader } from "react-spinners";
 
 export const metadata: Metadata = {
   title: "Login Page",
@@ -8,7 +9,7 @@ export const metadata: Metadata = {
 };
 const LoginPage = () => {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<SyncLoader />}>
       <LoginForm />
     </Suspense>
   );
