@@ -1,3 +1,4 @@
+import Head from "next/head";
 import React from "react";
 
 type VerificationEmailProps = {
@@ -13,9 +14,9 @@ const VerificationEmail = ({
 }: VerificationEmailProps) => {
   return (
     <html>
-      <head>
+      <Head>
         <title>Verify Account Confirmation</title>
-      </head>
+      </Head>
       <body
         style={{
           width: "100%",

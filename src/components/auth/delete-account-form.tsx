@@ -12,7 +12,8 @@ export const DeleteAccountForm = () => {
   const [error, setError] = useState<string | undefined>();
   const [success, setSuccess] = useState<string | undefined>();
   // using search params hook to get token from url
-  const token = useSearchParams().get("token");
+  const searchParams = useSearchParams();
+  const token = searchParams.get("token");
   // using  use callback hook to submit token for verification at the server
   const onSubmit = useCallback(() => {
     if (success || error) return;
@@ -35,7 +36,7 @@ export const DeleteAccountForm = () => {
           setError("Something went wrong");
         });
     }
-  }, [token]);
+  }, [token, error, success]);
   //   using use effect to trigger onSubmit the moment page is rendered
   useEffect(() => {
     onSubmit();

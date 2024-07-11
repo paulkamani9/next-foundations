@@ -33,7 +33,7 @@ export const NewVerificationForm = () => {
           setError("Something went wrong");
         });
     }
-  }, [token]);
+  }, [token, error, success]);
   //   using use effect to trigger onSubmit the moment page is rendered
   useEffect(() => {
     onSubmit();

@@ -1,3 +1,4 @@
+import Head from "next/head";
 import React from "react";
 
 type ResetEmailProps = {
@@ -13,9 +14,9 @@ const ResetEmail = ({
 }: ResetEmailProps) => {
   return (
     <html>
-      <head>
+      <Head>
         <title>Reset Password Email</title>
-      </head>
+      </Head>
       <body
         style={{
           width: "100%",

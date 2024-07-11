@@ -1,3 +1,4 @@
+import Head from "next/head";
 import React from "react";
 
 type DeleteAccountProps = {
@@ -13,9 +14,9 @@ const DeleteAccountConfirmation = ({
 }: DeleteAccountProps) => {
   return (
     <html>
-      <head>
+      <Head>
         <title>Delete Account Confirmation</title>
-      </head>
+      </Head>
       <body
         style={{
           width: "100%",
