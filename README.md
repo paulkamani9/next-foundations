@@ -37,5 +37,4 @@ GOOGLE_CLIENT_SECRET=*****
 # Resend API key for email verification, from Resend
 RESEND_API_KEY=*********
 ```
-# myrepo
-# next-foundations
+
