@@ -38,3 +38,4 @@ GOOGLE_CLIENT_SECRET=*****
 RESEND_API_KEY=*********
 ```
 # myrepo
+# next-foundations
