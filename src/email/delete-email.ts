@@ -51,7 +51,7 @@ export const sendDeleteEmail = async ({
         Delete Account Confirmation
       </h1>
       <p style="font-size: 16px; color: #555; margin-bottom: 20px">
-        Hello {name},
+        Hello ${name},
       </p>
       <p style="font-size: 16px; color: #555; margin-bottom: 20px">
         You are about to delete your account with ${companyName}. This action is
@@ -61,7 +61,7 @@ export const sendDeleteEmail = async ({
         Please ignore if you did not request this action.
       </p>
       <a
-        href="${process.env.BASE_URL}/delete-account?token=${token}"
+        href="${BASE_URL}/delete-account?token=${token}"
         style="text-decoration: none"
       >
         <button
