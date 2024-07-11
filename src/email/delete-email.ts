@@ -61,7 +61,7 @@ export const sendDeleteEmail = async ({
         Please ignore if you did not request this action.
       </p>
       <a
-        href="${BASE_URL}/delete-account?token=${token}"
+        href="${BASE_URL}/auth/delete-account?token=${token}"
         style="text-decoration: none"
       >
         <button
